@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Viewer</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body style="padding: 40px; max-width: 900px; margin: auto;">
+<a href="index.html" style="text-decoration:none; color:#0d6efd;">← Back to Home</a>
+<hr>
+<div id="content" class="markdown-body"></div>
+
+<script>
+    // get the ?file= parameter from the URL
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get("file");
+
+    if (file) {
+        fetch(file)
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById("content").innerHTML = marked.parse(text);
+            })
+            .catch(err => {
+                document.getElementById("content").innerHTML = "<p>Could not load article.</p>";
+                console.error(err);
+            });
+    } else {
+        document.getElementById("content").innerHTML = "<p>No article specified.</p>";
+    }
+</script>
+</body>
+</html>
