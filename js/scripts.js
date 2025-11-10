@@ -83,3 +83,27 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(run, cycleMs);
     }, holdMs);
 });
+
+// === Articles tag filter ===
+document.addEventListener("DOMContentLoaded", function () {
+    const btns = document.querySelectorAll(".article-filter");
+    const cards = document.querySelectorAll(".article-card");
+
+    function applyFilter(filter) {
+        cards.forEach(card => {
+            const tags = (card.getAttribute("data-tags") || "").split(/\s+/);
+            const show = (filter === "all") || tags.includes(filter);
+            card.style.display = show ? "" : "none";
+        });
+    }
+
+    btns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            btns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            applyFilter(btn.getAttribute("data-filter"));
+        });
+    });
+
+    applyFilter("all");
+});

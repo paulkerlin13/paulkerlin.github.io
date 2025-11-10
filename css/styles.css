@@ -11002,3 +11002,10 @@ section.resume-section .resume-section-content {
     transform: none;
   }
 }
+
+/* === Articles filter buttons === */
+.article-filter.active {
+  color: #fff !important;
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+}
