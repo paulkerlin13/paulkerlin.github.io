@@ -17,3 +17,10 @@ I’ve also focused on improving my **confidence and communication skills**, bec
 ### Takeaway
 
 In a competitive job market, I believe what sets someone apart isn’t just what they know — it’s how **eager they are to keep learning**. My approach has always been to **stay curious, stay consistent, and always dig deeper** into how things work and why they work the way they do.
+
+---
+
+#### Relevant Links
+[CompTIA Security+](https://www.comptia.org/en-us/certifications/security/)
+[AWS Certified Cloud Practitioner](https://aws.amazon.com/certification/certified-cloud-practitioner/)
+[TryHackMe](https://tryhackme.com/)
